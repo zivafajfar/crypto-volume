@@ -4,7 +4,7 @@ const axios = require('axios');
 // Constants
 const PORT = 8080;
 //const HOST = '0.0.0.0';
-const HOST = 'https://cryptosvolume.herokuapp.com';
+const PORT = process.env.PORT || 3000;
 
 // App
 const app = express();
