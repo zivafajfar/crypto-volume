@@ -44,3 +44,8 @@ new Promise(async (resolve, reject) => {
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`)
 });
+
+//LOCALHOST
+/*app.listen(PORT, HOST, () => {
+  console.log(`listening on port ${PORT}${HOST}`)
+});*/
