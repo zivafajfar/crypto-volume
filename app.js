@@ -35,7 +35,7 @@ new Promise(async (resolve, reject) => {
 
     let volume = ""
     for (let i = 1; i < resultFiltered.length; i++) {
-      volume += "<tr><td>" + i + "</td>" + "<td>" + resultFiltered[i].symbol + "</td>" + "<td>" + resultFiltered[i].name + "</td>" + "<td>" + resultFiltered[i].quote.USD.volume_24h.toLocaleString(undefined,{ minimumFractionDigits: 2 } + "</td>" + "<td>" + resultFiltered[i].quote.USD.volume_change_24h + "</td></tr>"
+      volume += "<tr><td>" + i + "</td>" + "<td>" + resultFiltered[i].symbol + "</td>" + "<td>" + resultFiltered[i].name + "</td>" + "<td>" + resultFiltered[i].quote.USD.volume_24h.toLocaleString(undefined,{ minimumFractionDigits: 2 }) + "</td>" + "<td>" + resultFiltered[i].quote.USD.volume_change_24h + "</td></tr>"
     }
     app.get('/', (req, res) => {
       res.send("<table><tr><th>" + "</th>" + "<th>SYMBOL</th>" + "<th>NAME</th>" + "<th>VOLUME</th>" + "<th>24H VOLUME CHANGE (%)</th></tr>" + volume + "</table>");
