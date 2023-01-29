@@ -16,7 +16,7 @@ const app = express();
 let response = null;
 new Promise(async (resolve, reject) => {
   try {
-    response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?volume_24h_min=10000000&market_cap_max=10000000000000&limit=5000', {
+    response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?volume_24h_min=1000000&market_cap_max=10000000000000&limit=5000', {
       headers: {
         'X-CMC_PRO_API_KEY': 'd996075f-c301-4197-8ed6-f964982d64fc',
       },
@@ -31,7 +31,7 @@ new Promise(async (resolve, reject) => {
     // success
     const result = response.data.data
     result.sort((a, b) => parseFloat(b.quote.USD.volume_change_24h) - parseFloat(a.quote.USD.volume_change_24h));
-    const resultFiltered = result.filter(r => r.quote.USD.volume_change_24h > 10);
+    const resultFiltered = result.filter(r => r.quote.USD.volume_change_24h > 100);
 
     let volume = ""
     for (let i = 1; i < resultFiltered.length; i++) {
