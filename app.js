@@ -34,7 +34,7 @@ new Promise(async (resolve, reject) => {
     const resultFiltered = result.filter(r => r.quote.USD.volume_change_24h > 100);
 
     let volume = ""
-    for (let i = 1; i < resultFiltered.length; i++) {
+    for (let i = 0; i < resultFiltered.length; i++) {
       volume += "<tr><td>" + i + "</td>" + "<td>" + resultFiltered[i].symbol + "</td>" + "<td>" + resultFiltered[i].name + "</td>" + "<td>" + resultFiltered[i].quote.USD.volume_24h.toLocaleString(undefined,{ minimumFractionDigits: 2 }) + "</td>" + "<td>" + resultFiltered[i].quote.USD.volume_change_24h + "</td></tr>"
     }
     app.get('/', (req, res) => {
