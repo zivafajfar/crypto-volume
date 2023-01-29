@@ -2,9 +2,12 @@ const express = require('express');
 const axios = require('axios');
 
 // Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+//const PORT = 8080;
+//const HOST = '0.0.0.0';
 //const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.PORT || 3001;
+
 
 // App
 const app = express();
@@ -46,6 +49,6 @@ new Promise(async (resolve, reject) => {
 //});
 
 //LOCALHOST
-app.listen(PORT, HOST, () => {
-  console.log(`listening on port ${PORT}${HOST}`)
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`)
 });
