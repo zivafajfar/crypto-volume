@@ -16,7 +16,7 @@ const app = express();
 let response = null;
 new Promise(async (resolve, reject) => {
   try {
-    response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?volume_24h_min=1000000&market_cap_max=10000000000000&limit=5000', {
+    response = await axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?volume_24h_min=10000000&market_cap_max=10000000000000&limit=5000', {
       headers: {
         'X-CMC_PRO_API_KEY': 'd996075f-c301-4197-8ed6-f964982d64fc',
       },
